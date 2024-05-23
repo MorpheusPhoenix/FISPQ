@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Attend Ambiental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="https://attendambiental.com.br/"><img src="https://raw.githubusercontent.com/Obaiderrom/sololearn/main/Picsart_24-05-19_15-11-56-818.jpg" alt="Attend Ambiental"></a>
+    
+    <img src="https://raw.githubusercontent.com/Obaiderrom/sololearn/main/top-view-science-experiments.jpg" alt="Top View Science Experiments">
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Pesquisar documentos...">
+        <div class="button-group">
+            <button id="searchButton">Pesquisar</button>
+            <button id="filterButton">Filtrar</button>
+        </div>
+    </div>
+    
+    <div class="document-list" id="documentList">
+        <!-- Documentos serão carregados aqui via JavaScript -->
+    </div>
+    
+    <div class="pagination">
+        <button>1</button>
+        <button>2</button>
+    </div>
+    
+    <!-- Modal -->
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Filtrar por Departamento</h2>
+            <div class="modal-button-group">
+                <button class="filter-btn" data-department="Manutenção">Manutenção</button>
+                <button class="filter-btn" data-department="Operação">Operação</button>
+                <button class="filter-btn" data-department="Administrativo">Administrativo</button>
+                <button id="clearFiltersButton" class="clear-btn">Limpar Filtros</button> <!-- Botão de Limpar Filtros -->
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
