@@ -1,141 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
     const documents = [
-    { 
-        title: "Air Liquide Brasil - Oxigênio Comprimido.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20AIR%20LIQUIDE%20BRASIL%20-%20OXIG%C3%8ANIO%20COMPRIMIDO.PDF" 
-    },
-    { 
-        title: "Albiquim - Cloreto Férrico.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20ALBIQUIM%20-%20CLORETO%20F%C3%89RRICO.pdf" 
-    },
-    { 
-        title: "Alphacarbo - Carvão Ativado.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20ALPHACARBO%20-%20CARV%C3%83O%20ATIVADO.pdf" 
-    },
-    { 
-        title: "AMC Química - Aluminato de Sódio.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20AMC%20QU%C3%8DMICA%20-%20ALUMINATO%20DE%20S%C3%93DIO.pdf" 
-    },
-    { 
-        title: "Anidrol - Peróxido de Hidrogênio.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20ANIDROL%20-%20PEROXIDO%20DE%20HIDROGENIO.pdf" 
-    },
-    { 
-        title: "BR - Diesel B S500.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20BR%20-%20DIESEL%20B%20S500.pdf" 
-    },
-    { 
-        title: "BR - Gasolina Comum C.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20BR%20-%20GASOLINA%20COMUM%20C.pdf" 
-    },
-    { 
-        title: "Chemicals Universal - Desengraxante Alcalino Hepta 100.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20CHEMICALS%20UNIVERSAL%20-%20DESENGRAXANTE%20ALCALINO%20HEPTA%20100.pdf" 
-    },
-    { 
-        title: "Chemicals Universal - Desengraxante Alcalino Hepta 1000.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20CHEMICALS%20UNIVERSAL%20-%20DESENGRAXANTE%20ALCALINO%20HEPTA%201000.pdf" 
-    },
-    { 
-        title: "Chemicals Universal - Sabão Desengraxante.pdf", 
-        department: "Operação", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20CHEMICALS%20UNIVERSAL%20-%20SABAO%20DESENGRAXANTE.pdf" 
-    },
-    { 
-        title: "Dryller - Hidróxido de Cálcio.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20DRYLLER%20-%20HIDR%C3%93XIDO%20DE%20C%C3%81LCIO.pdf" 
-    },
-    { 
-        title: "Dinâmica - Solução Padrão de Condutividade 12,88 mS/cm.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20Din%C3%A2mica%20-%20Sol.%20Padr%C3%A3o%20de%20Condutividade%2012%2C88_mS%20-%20cm.pdf" 
-    },
-    { 
-        title: "Dinâmica - Solução Padrão de Condutividade 1413 uS/cm.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20Din%C3%A2mica%20-%20Sol.%20Padr%C3%A3o%20de%20Condutividade%201413%20uScm.pdf" 
-    },
-    { 
-        title: "Dinâmica - Solução Padrão de Condutividade 5000 uS/cm.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20Din%C3%A2mica%20-%20Sol.%20Padr%C3%A3o%20de%20Condutividade%205000%20us-cm.pdf" 
-    },
-    { 
-        title: "GR Química - Cal Hidratada.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20GR%20QU%C3%8DMICA%20-%20CAL%20HIDRATADA.pdf" 
-    },
-    { 
-        title: "GR Química - Metabissulfito de Sódio.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20GR%20QU%C3%8DMICA%20-%20METABISSULFITO%20DE%20S%C3%93DIO.pdf" 
-    },
-    { 
-        title: "GR Química - Polímero Aniônico.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20GR%20QU%C3%8DMICA%20-%20POLIMERO%20ANI%C3%94NICO.pdf" 
-    },
-    { 
-        title: "GR Química - Ácido Sulfúrico 50%.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20GR%20QU%C3%8DMICA-%20%C3%81CIDO%20SULF%C3%9ARICO%2050_.pdf" 
-    },
-    { 
-        title: "Nheel Química - Floculan C30.pdf", 
-        department: "Manutenção", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20NHEEL%20QUIMICA%20LTDA%20-%20FLOCULAN%20C30.pdf" 
-    },
-    { 
-        title: "Projesan - Policloreto de Alumínio (PAC).pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20PROJESAN-POLICLORETO%20DE%20ALUMINIO%20(PAC).pdf" 
-    },
-    { 
-        title: "Quallocal - Hidróxido de Cálcio.pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20QUALLICAL%20-%20HIDR%C3%93XIDO%20DE%20C%C3%81LCIO.pdf" 
-    },
-    { 
-        title: "Safra - Álcool 98,2 INPM.pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20SAFRA%20-%20ALC%C3%93OL%2098%2C2%20INPM.pdf" 
-    },
-    { 
-        title: "Suall - Sulfato Ferroso.pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20SUALL%20-%20SULFATO%20FERROSO.pdf" 
-    },
-    { 
-        title: "Sumatex - Soda Cáustica Líquida.pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20SUMATEX%20-%20SODA%20C%C3%81USTICA%20L%C3%8DQUIDA.pdf" 
-    },
-    { 
-        title: "Top Color - Dióxido de Titânio Rutilo R110.pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20TOP%20COLOR%20-%20DI%C3%93XIDO%20DE%20TIT%C3%82NIO%20RUTILO%20R110.pdf" 
-    },
-    { 
-        title: "TQA Vitta - Cloreto de Polialumínio.pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20TQA%20VITTA-%20CLORETO%20DE%20POLIALUM%C3%8DNIO.pdf" 
-    },
-    { 
-        title: "Ultragaz - GLP.pdf", 
-        department: "Administrativo", 
-        link: "https://github.com/Obaiderrom/Documentos-AttendAmbiental/blob/e0ed188fa2bf31e5009955926214b00179d974dd/Opera%C3%A7%C3%A3o/FISPQ%20-%20ULTRAGAZ%20-%20GLP.pdf" 
-    }
-];
+        { title: "Documento 1" },
+        { title: "Documento 2" },
+        { title: "Documento 3" },
+        { title: "Documento 4" },
+        { title: "Documento 5" },
+        { title: "Documento 6" },
+        { title: "Documento 7" },
+        { title: "Documento 8" },
+        { title: "Documento 9" },
+        { title: "Documento 10" },
+        { title: "Documento 11" },
+        { title: "Documento 12" },
+        { title: "Documento 13" },
+        { title: "Documento 14" },
+        { title: "Documento 15" },
+        { title: "Documento 16" },
+        { title: "Documento 17" },
+        { title: "Documento 18" },
+        { title: "Documento 19" },
+        { title: "Documento 20" },
+        { title: "Documento 21" },
+        { title: "Documento 22" },
+        { title: "Documento 23" },
+        { title: "Documento 24" },
+        { title: "Documento 25" },
+        { title: "Documento 26" },
+        { title: "Documento 27" },
+        { title: "Documento 28" },
+        { title: "Documento 29" },
+        { title: "Documento 30" },
+        { title: "Documento 31" },
+        { title: "Documento 32" },
+        { title: "Documento 33" },
+        { title: "Documento 34" },
+        { title: "Documento 35" },
+        { title: "Documento 36" },
+        { title: "Documento 37" },
+        { title: "Documento 38" },
+        { title: "Documento 39" },
+        { title: "Documento 40" }
+    ];
 
     const departments = [...new Set(documents.map(doc => doc.department))].sort();
 
