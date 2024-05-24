@@ -181,26 +181,65 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePagination(totalPages, page, filteredDocs);
     }
 
-    function updatePagination(totalPages, currentPage, filteredDocs = documents) {
+    function updatePagination(totalPages, currentPage, filteredDocs) {
         const pagination = document.querySelector('.pagination');
         pagination.innerHTML = '';
 
-        for (let i = 1; i <= totalPages; i++) {
+        const maxButtons = 3; // Número máximo de botões de paginação a serem exibidos
+        const halfMaxButtons = Math.floor(maxButtons / 2);
+        let startPage = currentPage - halfMaxButtons;
+        let endPage = currentPage + halfMaxButtons;
+
+        if (startPage < 1) {
+            startPage = 1;
+            endPage = Math.min(totalPages, startPage + maxButtons - 1);
+        } else if (endPage > totalPages) {
+            endPage = totalPages;
+            startPage = Math.max(1, endPage - maxButtons + 1);
+        }
+
+        const prevButton = document.createElement('span');
+        prevButton.innerText = 'Anterior';
+        prevButton.style.color = '#fff'; // Cor do texto branco
+        prevButton.style.marginRight = '10px'; // Ajuste de espaçamento
+        prevButton.addEventListener('click', () => {
+            if (currentPage > 1) {
+                changePage(currentPage - 1, filteredDocs);
+            }
+        });
+        pagination.appendChild(prevButton);
+
+                for (let i = startPage; i <= endPage; i++) {
             const button = document.createElement('button');
             button.innerText = i;
             if (i === currentPage) {
                 button.classList.add('active');
             }
+            button.addEventListener('click', () => {
+                changePage(i, filteredDocs);
+            });
             pagination.appendChild(button);
         }
-        const paginationButtons = document.querySelectorAll('.pagination button');paginationButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                changePage(parseInt(button.innerText), filteredDocs);
-            });
+
+        const nextButton = document.createElement('span');
+        nextButton.innerText = 'Próximo';
+        nextButton.style.color = '#fff'; // Cor do texto branco
+        nextButton.style.marginLeft = '5px'; // Ajuste de espaçamento
+        nextButton.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                changePage(currentPage + 1, filteredDocs);
+            }
         });
+        pagination.appendChild(nextButton);
+
+        if (totalPages > maxButtons) {
+            const morePagesIndicator = document.createElement('span');
+            morePagesIndicator.innerText = '...';
+            pagination.insertBefore(morePagesIndicator, nextButton);
+        }
     }
 
-    function changePage(page, filteredDocs = documents) {
+    function changePage(page, filteredDocs) {
         const scrollPosition = window.scrollY; // Captura a posição atual de rolagem
         displayDocuments(page, filteredDocs);
         window.scroll(0, scrollPosition); // Mantém a posição de rolagem
@@ -210,7 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const input = document.getElementById('searchInput').value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remover acentos
         const filteredDocuments = documents.filter(doc => {
             const title = doc.title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remover acentos
-            return title.includes(input) || similarity(input, title) > 0.8; // Pesquisa aproximada
+            return title.includes(input) || similarity(input, title) > 
+0.8; // Pesquisa aproximada
         });
 
         displayDocuments(1, filteredDocuments);
