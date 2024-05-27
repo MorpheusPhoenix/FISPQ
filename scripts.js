@@ -667,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const nextButton = document.createElement('span');
-        nextButton.innerText = '》';
+        nextButton.innerText = ' 》';
         nextButton.style.color = '#fff'; // Cor do texto branco
         nextButton.style.marginLeft = '5px'; // Ajuste de espaçamento
         nextButton.addEventListener('click', () => {
