@@ -580,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
         department: "Operação", 
         link: "https://github.com/AttendAmbiental/FISPQ/blob/main/FISPQ's%20Opera%C3%A7%C3%A3o/Unipar%20-%20%C3%81cido%20Clor%C3%ADdrico.pdf" 
     }
-];
+].sort((a, b) => a.title.localeCompare(b.title)); // Ordenar os documentos pelo título
 
     const departments = [...new Set(documents.map(doc => doc.department))].sort();
 
