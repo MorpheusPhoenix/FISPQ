@@ -644,7 +644,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const prevButton = document.createElement('span');
-        prevButton.innerText = '<Anterior';
+        prevButton.innerText = '《';
         prevButton.style.color = '#fff'; // Cor do texto branco
         prevButton.style.marginRight = '10px'; // Ajuste de espaçamento
         prevButton.addEventListener('click', () => {
@@ -667,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const nextButton = document.createElement('span');
-        nextButton.innerText = 'Próximo>';
+        nextButton.innerText = '》';
         nextButton.style.color = '#fff'; // Cor do texto branco
         nextButton.style.marginLeft = '5px'; // Ajuste de espaçamento
         nextButton.addEventListener('click', () => {
@@ -679,7 +679,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (totalPages > maxButtons) {
             const morePagesIndicator = document.createElement('span');
-            morePagesIndicator.innerText = '...';
+            morePagesIndicator.innerText = '';
             pagination.insertBefore(morePagesIndicator, nextButton);
         }
     }
